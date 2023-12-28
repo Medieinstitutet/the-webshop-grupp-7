@@ -1,6 +1,6 @@
 import { Product } from "./models/Product";
 
-export function createHtmlForProducts(products:Product[]){
+export function createHtmlForProducts(products:Product[]) {
     if (document.getElementById("mainProducts")){
         let mainProducts = document.getElementById("mainProducts") as HTMLDivElement;
 
