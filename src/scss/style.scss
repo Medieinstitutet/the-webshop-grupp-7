@@ -1,0 +1,30 @@
+footer {
+  height: 120px;
+  background-color: #f2e9df;
+  @include mx.flex(row, flex-end, center);
+
+  #footer-container {
+    @include mx.flex(row, space-around, center);
+    color: #edb480;
+  }
+
+  #socials {
+    padding-right: -20px;
+    .fa {
+      font-size: 28px;
+      color: #edb480;
+      padding: 10px;
+    }
+  }
+}
+
+a{
+  text-decoration: none;
+
+  &:hover{
+      color: #f77c2c;
+  }
+  /* &:visited{
+      color: #edb480;
+  } */
+}
