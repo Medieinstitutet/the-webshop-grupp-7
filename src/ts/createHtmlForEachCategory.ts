@@ -1,6 +1,6 @@
 import { Product } from "./models/Product";
 
-export function createHtmlForProducts(products:Product[]) {
+export function createHtmlForEachCategory(products:Product[], category:string) {
     if (document.getElementById("mainProducts")){
         let mainProducts = document.getElementById("mainProducts") as HTMLDivElement;
         mainProducts.innerHTML = "";
@@ -8,6 +8,7 @@ export function createHtmlForProducts(products:Product[]) {
         let shoppingCart:Product[] = JSON.parse(localStorage.getItem("shoppingCart") || JSON.stringify([]));
     
     for(let i = 0;i < products.length;i++){
+    if(products[i].category === category){
     let productContainer = document.createElement("section");
     productContainer.className = "productContainer";
     
@@ -40,6 +41,7 @@ export function createHtmlForProducts(products:Product[]) {
         localStorage.setItem("shoppingCart",JSON.stringify(shoppingCart));
         
         })
+    }
     }
     }
     }

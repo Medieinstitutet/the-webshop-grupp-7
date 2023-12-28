@@ -3,6 +3,7 @@ import "./../scss/productPage.scss";
 import { createHtmlForProducts } from "./createHtmlForProducts";
 import { Product } from "./models/Product";
 import { getProducts } from "./services/productService";
+import { createHtmlForEachCategory } from "./createHtmlForEachCategory";
 
 async function getProductsToClass():Promise<Product[]>{
 
@@ -19,3 +20,12 @@ async function getProductsToClass():Promise<Product[]>{
 let products:Product[] = await getProductsToClass();
 console.log(products);
 createHtmlForProducts(products);
+
+// let test = document.createElement("h1");
+// test.innerHTML = "Test";
+// let main = document.getElementById("mainProducts");
+// main?.appendChild(test);
+
+// test.addEventListener("click", () => {
+//     createHtmlForEachCategory(products,"men's clothing");
+// })
