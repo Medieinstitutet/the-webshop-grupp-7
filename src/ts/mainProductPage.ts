@@ -7,7 +7,10 @@ import { Product } from "./models/Product";
 let products: Product[] = JSON.parse(
   localStorage.getItem("productsFromApi") || JSON.stringify([])
 );
-console.log(products);
+
+let shoppingCart: Product[] = JSON.parse(
+  localStorage.getItem("shoppingCart") || JSON.stringify([])
+);
 
 const searchParams = new URLSearchParams(window.location.search);
 
