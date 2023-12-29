@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Varukorg</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="src/scss/checkout.scss">
-</head>
-<body>
-    <header>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="src/scss/checkout.scss" />
+  </head>
+  <body>
+    <header></header>
 
-    </header>
-    
     <main>
       <section id="checkout-container">
         <h2>Shoppingbag</h2>
-        <div id="products-display">
-
-        </div>
+        <div id="products-display"></div>
         <aside id="total-price">
-            <a href="/payPage.html">
-                <button id="checkout-btn">Fortsätt till kassan</button>
-            </a>
-            
+          <div id="part-sum">
+            <p>Delsumma: </p>
+            <p>Leverans: </p>
+          </div>
+          <div id="total-sum">
+            <p>Summa: </p>
+          </div>
+
+          
+          <a href="/payPage.html">
+            <button id="checkout-btn">Fortsätt till kassan</button>
+          </a>
         </aside>
       </section>
     </main>
 
     <footer>
-        <div id="footer-container">
-            <div>
-              <h2>Rubrik</h2>
-            </div>
-            <div>
-              <h2><a href="/checkout.html">Kassa</a></h2>
-            </div>
-            <div id="socials">
-              <a href="/index.html" class="fa fa-facebook"></a>
-              <a href="#" class="fa fa-instagram"></a>
-              <a href="#" class="fa fa-twitter"></a>
-            </div>
-          </div>
+      <div id="footer-container">
+        <div>
+          <h2>Rubrik</h2>
+        </div>
+        <div>
+          <h2><a href="/checkout.html">Kassa</a></h2>
+        </div>
+        <div id="socials">
+          <a href="/index.html" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </div>
+      </div>
     </footer>
     <script type="module" src="/src/ts/checkout.ts"></script>
-</body>
+  </body>
 </html>

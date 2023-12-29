@@ -3,10 +3,10 @@
 footer {
   height: 120px;
   background-color: #f2e9df;
-  @include mx.flex(row, flex-end, center);
+  @include mx.flex(row, flex-end, center, 100%);
 
   #footer-container {
-    @include mx.flex(row, space-around, center);
+    @include mx.flex(row, space-around, center, 100%);
     color: #edb480;
   }
 
