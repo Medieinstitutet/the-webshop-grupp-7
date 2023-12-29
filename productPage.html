@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Produkter</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="src/scss/hero.scss"> -->
-</head>
-<body>
+    <link rel="stylesheet" href="src/scss/header.scss" />
+  </head>
+  <body>
     <header>
-
+      <div id="header-container">
+        <div id="categories">
+          <div class="navDropdown">
+            <a href="productPage.html?category=women's clothing">Women </a>
+            <a href="productPage.html?category=men's clothing">Men</a>
+            <a href="productPage.html?category=jewelery">Jewelery</a>
+            <a href="productPage.html?category=electronics">Electronics</a>
+          </div>
+        </div>
+        <div id="cartElement">
+          <a id="cartIconHolder" href="/checkout.html">
+            <img id="cartIcon" src="src/img/cartIcon.svg" alt="" />
+          </a>
+        </div>
+      </div>
     </header>
-    
-    <main id="mainProducts">
-      
-    </main>
+
+    <main id="mainProducts"></main>
 
     <footer>
-        <div id="footer-container">
-            <div>
-              <h2>Rubrik</h2>
-            </div>
-            <div>
-              <h2><a href="/checkout.html">Kassa</a></h2>
-            </div>
-            <div id="socials">
-              <a href="#" class="fa fa-facebook"></a>
-              <a href="#" class="fa fa-instagram"></a>
-              <a href="#" class="fa fa-twitter"></a>
-            </div>
-          </div>
+      <div id="footer-container">
+        <div>
+          <h2>Rubrik</h2>
+        </div>
+        <div id="socials">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </div>
+      </div>
     </footer>
     <script type="module" src="/src/ts/mainProductPage.ts"></script>
-</body>
+  </body>
 </html>
