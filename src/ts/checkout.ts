@@ -22,6 +22,9 @@ window.addEventListener("load", () => {
     for (let i = 0; i < shoppingCart.length; i++) {
       let product = document.createElement("div");
       product.className = "product";
+      let trashCan = document.createElement("i");
+      trashCan.className = "fa fa-trash";
+
       let imgBox = document.createElement("div");
       imgBox.className = "imageContainer";
       let img = document.createElement("img");
@@ -40,10 +43,17 @@ window.addEventListener("load", () => {
 
 
       productsDisplay?.appendChild(product);
+      
       product.appendChild(imgBox);
       imgBox.appendChild(img);
       product.appendChild(title);
       product.appendChild(price);
+      product.appendChild(trashCan);
+
+      trashCan.addEventListener("click", () => {
+        shoppingCart.slice(i, 1);
+        /* localStorage.removeItem("shoppingCart", shoppingCart[i]); */
+      })
     }
 
     console.log(partSum);
