@@ -20,7 +20,7 @@ export function createHtmlForProducts(products: Product[]) {
     generateCartAmount(shoppingCart);
     for (let i = 0; i < products.length; i++) {
       let productContainer = document.createElement("section");
-      productContainer.className = "productContainer";
+      productContainer.className = "product--container";
 
       let title = document.createElement("h4");
       let description = document.createElement("p");
@@ -29,6 +29,7 @@ export function createHtmlForProducts(products: Product[]) {
       imageBox.className = "imageContainer";
       let image = document.createElement("img");
       let cartButton = document.createElement("button");
+      cartButton.className = "btn";
 
       title.innerHTML = products[i].title;
       description.innerHTML = products[i].description;
@@ -41,9 +42,14 @@ export function createHtmlForProducts(products: Product[]) {
       productContainer.appendChild(imageBox);
       imageBox.appendChild(image);
       productContainer.appendChild(title);
-      productContainer.appendChild(description);
       productContainer.appendChild(price);
       productContainer.appendChild(cartButton);
+      productContainer.appendChild(description);
+
+      productContainer.addEventListener("click", () => {
+        productContainer.classList.toggle("product--container__highlighted");
+
+      })
 
       cartButton.addEventListener("click", () => {
         const existingProduct = shoppingCart.find(

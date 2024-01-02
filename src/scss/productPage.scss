@@ -1,30 +1,107 @@
+@use "variables" as v;
+
 #mainProducts {
-    margin: 0.5rem;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    background-color: v.$primary-color;
+    overflow: hidden;
 
-    .productContainer {
+    .product--container {
         width: 300px;
-        margin: 1rem;
-        padding: 1rem;
+        height: 300px;
+        margin: 2rem;
+        padding: 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: 1px solid gray;
         border-radius: 2rem;
+        animation-name: size-back;
+        animation-duration: 0.3s;
+        background-color: white;
+        box-shadow: 0 0 5px 5px v.$shadow-color;
 
-        .imageContainer{
-            width: 100px;
-            height: auto;
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 0 9px 9px v.$shadow-color;
+        }
+        
+        .btn {
+            border-radius: 0.5rem;
+            border: none;
+            padding: 0.5rem;
+            background-color: v.$btn-color;
+            font-weight: 600;
 
-            img {
-                width: 100%;
-                height: auto;
+            &:hover {
+                background-color: v.$btn-hover-color;
+                cursor: pointer;
+                box-shadow: 0 0 3px 1px v.$shadow-color;
             }
         }
+
+        p {
+            display: none;
+        }
+
+        .imageContainer{
+            height: 100px;
+            width: auto;
+
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+        &__highlighted {
+            width: 450px;
+            height: 450px;
+            animation-name: size;
+            animation-duration: 0.8s;
+            box-shadow: 0 0 9px 9px v.$shadow-color;
+
+            p {
+                display: block;
+                animation-name: hidd;
+                animation-duration: 1.2s;
+                overflow: auto;
+            }
+
+            .imageContainer {
+            height: 150px;
+            width: auto;
+            animation-name: size-img;
+            animation-duration: 0.8s;
+            }   
+        }
     }
+}
+
+@keyframes size {
+    from {width: 300px;
+    height: 300px;}
+    to {width: 450px;
+    height: 450px;}
+}
+@keyframes size-img {
+    from {width: auto;
+        height: 100px;}
+        to {width: auto;
+        height: 150px;}
+}
+
+@keyframes hidd {
+    0% {opacity: 0%;}
+    70% {opacity: 0%;}
+    100% {opacity: 100%;}
+}
+
+@keyframes size-back {
+    from {width: 450px;
+        height: 450px;}
+    to {width: 300px;
+    height: 300px;}
 }
