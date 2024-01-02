@@ -19,8 +19,9 @@ async function getProductsToClass(): Promise<Product[]> {
   //console.log(listOfProducts);
   return listOfProducts;
 }
-
 let products: Product[] = await getProductsToClass();
 console.log(products);
 
 localStorage.setItem("productsFromApi", JSON.stringify(products));
+
+

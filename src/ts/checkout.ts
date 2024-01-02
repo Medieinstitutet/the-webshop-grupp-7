@@ -1,23 +1,27 @@
 import "./../scss/style.scss";
 import "./../scss/productPage.scss";
 import { Product } from "./models/Product";
-const productsDisplay = document.getElementById("products-display");
 
-//lägg till i localStorage
+/* localStorage.clear(); */
+const productsDisplay = document.getElementById(
+  "products-display"
+) as HTMLDivElement;
+
 let shoppingCart: Product[] = JSON.parse(
   localStorage.getItem("shoppingCart") || JSON.stringify([])
 );
+window.addEventListener("load", createShoppingBag);
 
-console.log(shoppingCart);
-
-window.addEventListener("load", () => {
+export function createShoppingBag() {
+  console.log("hej");
   if (shoppingCart.length === 0) {
     const emptyCart = document.createElement("p");
     emptyCart.innerHTML = "Din varukorg är tom";
-    productsDisplay?.appendChild(emptyCart);
+    productsDisplay.appendChild(emptyCart);
   } else {
-    
-    let partSum:number = 0;
+    let partSum: number = 0;
+
+    productsDisplay.innerHTML = "";
 
     for (let i = 0; i < shoppingCart.length; i++) {
       let product = document.createElement("div");
@@ -37,13 +41,11 @@ window.addEventListener("load", () => {
       img.alt = "Picture of " + shoppingCart[i].title;
 
       let x = shoppingCart[i].price;
-      let y :number = +x;
+      let y: number = +x;
       partSum = partSum + y;
-      
 
+      productsDisplay.appendChild(product);
 
-      productsDisplay?.appendChild(product);
-      
       product.appendChild(imgBox);
       imgBox.appendChild(img);
       product.appendChild(title);
@@ -51,12 +53,24 @@ window.addEventListener("load", () => {
       product.appendChild(trashCan);
 
       trashCan.addEventListener("click", () => {
-        shoppingCart.slice(i, 1);
+        removeItem(shoppingCart[i]);
+        shoppingCart.splice(i, 1);
+        console.log(shoppingCart);
         /* localStorage.removeItem("shoppingCart", shoppingCart[i]); */
-      })
+      });
     }
-
+    let sum = document.getElementById("sum") as HTMLParagraphElement;
+    sum.innerHTML = "$" + partSum;
     console.log(partSum);
-    
   }
-});
+}
+
+function removeItem(item: Product) {
+  let rm = item.id;
+  for(let i  = 0; i < localStorage.length; i++){
+    if(localStorage[i].includes(rm)){
+        let valueToRemove = localStorage[i];
+        localStorage.removeItem(valueToRemove);
+    }
+  }
+}

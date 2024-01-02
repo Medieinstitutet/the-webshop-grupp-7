@@ -30,8 +30,8 @@ body {
         border-radius: 0.5rem;
         background-color: white;
 
-        .fa-trash-can {
-            color: black;
+        .fa-trash {
+            cursor: pointer;
         }
 
         .imageContainer{
@@ -53,16 +53,13 @@ body {
         width: 25%;
         background-color:#f2e9df ;
 
-        #part-sum, #total-sum {
-            @include mx.flex(column, space-between, flex-start, 100%);
+        #total-sum {
+            @include mx.flex(row, space-between, flex-start, 100%);
             flex-wrap: wrap;
-        }
-
-        #part-sum {
             border-top: 1px solid black;
             border-bottom: 2px solid black;
+            margin: 15px;
         }
-
 
         #checkout-btn,
         #payment-btn {
