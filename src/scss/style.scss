@@ -1,5 +1,11 @@
 @use "mixins" as mx;
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 footer {
   height: 120px;
   background-color: #f2e9df;
