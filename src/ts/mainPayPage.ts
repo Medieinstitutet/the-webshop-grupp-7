@@ -1,6 +1,9 @@
 import "./../scss/payment.scss";
+import { createHtmlForForm } from "./createHtmlForForm";
 
 let paymentButton = document.getElementById("payment-btn");
+
+createHtmlForForm();
 
 
 paymentButton?.addEventListener("click", () => {
