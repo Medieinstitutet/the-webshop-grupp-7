@@ -1,5 +1,3 @@
-import "./../scss/style.scss";
-import "./../scss/productPage.scss";
 import { createHtmlForProducts } from "./createHtmlForProducts";
 import { Product } from "./models/Product";
 //import { createHtmlForEachCategory } from "./createHtmlForEachCategory";

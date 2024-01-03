@@ -46,9 +46,10 @@ export function createHtmlForProducts(products: Product[]) {
       productContainer.appendChild(cartButton);
       productContainer.appendChild(description);
 
-      productContainer.addEventListener("click", () => {
+      productContainer.addEventListener("click", (e:Event) => {
+        if(e.target !== cartButton){
         productContainer.classList.toggle("product--container__highlighted");
-
+        }
       })
 
       cartButton.addEventListener("click", () => {

@@ -1,5 +1,3 @@
-import "./../scss/style.scss";
-import "./../scss/productPage.scss";
 import { Product } from "./models/Product";
 
 /* localStorage.clear(); */
