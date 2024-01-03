@@ -7,7 +7,9 @@ body {
   /*   @include mx.flex(column, space-evenly, center, 100%); */
 
     #checkout-container {
-        padding: 20px;
+      width: 100vw;
+      max-width: 100%;
+      //padding: 20px;
       text-align: center;
       @include mx.flex(row, center, flex-start, 100%);
       flex-wrap: wrap;
@@ -20,6 +22,7 @@ body {
         float: left;
         @include mx.flex(column, space-evenly, flex-start, 65%);
         background-color:#f2e9df ;
+        margin: 1rem;
       }
 
       .product {
