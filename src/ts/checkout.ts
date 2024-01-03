@@ -13,15 +13,13 @@ let shoppingCart: Product[] = JSON.parse(
 window.addEventListener("load", createShoppingBag);
 
 export function createShoppingBag() {
-  console.log("hej");
+  productsDisplay.innerHTML = "";
   if (shoppingCart.length === 0) {
     const emptyCart = document.createElement("p");
     emptyCart.innerHTML = "Din varukorg är tom";
     productsDisplay.appendChild(emptyCart);
   } else {
     let partSum: number = 0;
-
-    productsDisplay.innerHTML = "";
 
     for (let i = 0; i < shoppingCart.length; i++) {
       let product = document.createElement("div");
@@ -53,8 +51,10 @@ export function createShoppingBag() {
       product.appendChild(trashCan);
 
       trashCan.addEventListener("click", () => {
-        removeItem(shoppingCart[i]);
+        /* removeItem(shoppingCart[i]); */
         shoppingCart.splice(i, 1);
+        localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+        createShoppingBag();
         console.log(shoppingCart);
         /* localStorage.removeItem("shoppingCart", shoppingCart[i]); */
       });
@@ -65,7 +65,7 @@ export function createShoppingBag() {
   }
 }
 
-function removeItem(item: Product) {
+/* function removeItem(item: Product) {
   let rm = item.id;
   for(let i  = 0; i < localStorage.length; i++){
     if(localStorage[i].includes(rm)){
@@ -73,4 +73,4 @@ function removeItem(item: Product) {
         localStorage.removeItem(valueToRemove);
     }
   }
-}
+} */
