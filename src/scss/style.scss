@@ -27,8 +27,6 @@
 
 body {
   @include mx.flex(column, center, center, 100%);
-  gap: 1rem;
-  height: 100%;
 
   #header-container {
     position: fixed;
@@ -75,8 +73,7 @@ body {
 
   main {
     width: 100%;
-    min-height: 80vh;
-    bottom: 0;
+    min-height: 86vh;
     #hero-image {
       height: 100vh;
       background-image: url(../img/bgpic.jpeg);
@@ -104,6 +101,8 @@ body {
 
   footer {
     height: 7vh;
+    position: relative;
+    bottom: 0;
     padding-right: 40px;
     /* background-color: v.$header-footer; */
     @include mx.flex(row, flex-end, center, 100%);
@@ -120,5 +119,9 @@ body {
         }
       }
     }
+  }
+  .footerAbs {
+    position: absolute;
+    bottom: 0;
   }
 }
