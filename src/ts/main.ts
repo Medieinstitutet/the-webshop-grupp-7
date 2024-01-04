@@ -1,6 +1,13 @@
-import "./../scss/style.scss";
+import { generateCartAmount } from "./generateCartAmount";
+import { ICartProduct } from "./models/IProduct";
 import { Product } from "./models/Product";
 import { getProducts } from "./services/productService";
+
+let shoppingCart: ICartProduct[] = JSON.parse(
+  localStorage.getItem("shoppingCart") || JSON.stringify([])
+);
+
+generateCartAmount(shoppingCart);
 
 async function getProductsToClass(): Promise<Product[]> {
   let products = await getProducts();
@@ -23,5 +30,3 @@ let products: Product[] = await getProductsToClass();
 console.log(products);
 
 localStorage.setItem("productsFromApi", JSON.stringify(products));
-
-

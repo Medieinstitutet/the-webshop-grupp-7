@@ -1,13 +1,8 @@
 import { createHtmlForProducts } from "./createHtmlForProducts";
 import { Product } from "./models/Product";
-//import { createHtmlForEachCategory } from "./createHtmlForEachCategory";
 
 let products: Product[] = JSON.parse(
   localStorage.getItem("productsFromApi") || JSON.stringify([])
-);
-
-let shoppingCart: Product[] = JSON.parse(
-  localStorage.getItem("shoppingCart") || JSON.stringify([])
 );
 
 const searchParams = new URLSearchParams(window.location.search);
