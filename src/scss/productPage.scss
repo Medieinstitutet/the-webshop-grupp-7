@@ -25,6 +25,9 @@
       cursor: pointer;
       box-shadow: 0 0 9px 9px v.$shadow-color;
     }
+    h4 {
+        margin: 0.5rem;
+    }
 
     .btn {
       border-radius: 0.5rem;
@@ -32,6 +35,7 @@
       padding: 0.5rem;
       background-color: v.$btn-color;
       font-weight: 600;
+      margin: 0.5rem;
 
       &:hover {
         background-color: v.$btn-hover-color;
