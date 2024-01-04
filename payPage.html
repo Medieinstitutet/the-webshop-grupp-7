@@ -2,14 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sell it or buy it?</title>
+    <title>Slutför köp</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="src/scss/checkout.scss" />
     <link rel="stylesheet" href="src/scss/style.scss" />
+    <link rel="stylesheet" href="src/scss/payment.scss" />
   </head>
   <body>
     <header>
@@ -32,15 +34,22 @@
       </div>
     </header>
 
-    <main>
-      <div id="hero-image">
-        <div id="hero-text">
-          <h3><a href="/productPage.html">Se våra produkter</a></h3>
+    <main id="mainPay">
+      <a id="back" href="/checkout.html"> &larr;Tillbaka till shoppingbagen </a>
+      <section id="checkout-container">
+        <h2>Slutför Köp</h2>
+        
+
+        <div id="payment-display"></div>
+        <div id="products-display" class="smaller">
         </div>
-      </div>
+        <div id="total-price">
+          <button id="payment-btn">Slutför köp</button>
+        </div>
+      </section>
     </main>
 
-    <footer class="footerAbs">
+    <footer>
       <div id="footer-container">
         <div id="socials">
           <a href="#" class="socialLinks fa fa-facebook"></a>
@@ -49,6 +58,7 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="/src/ts/main.ts"></script>
+    <script type="module" src="/src/ts/checkout.ts"></script>
+    <script type="module" src="/src/ts/mainPayPage.ts"></script>
   </body>
 </html>

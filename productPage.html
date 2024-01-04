@@ -2,14 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sell it or buy it?</title>
+    <title>Produkter</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="src/scss/style.scss" />
+    <link rel="stylesheet" href="src/scss/productPage.scss" />
   </head>
   <body>
     <header>
@@ -32,15 +33,9 @@
       </div>
     </header>
 
-    <main>
-      <div id="hero-image">
-        <div id="hero-text">
-          <h3><a href="/productPage.html">Se våra produkter</a></h3>
-        </div>
-      </div>
-    </main>
+    <main id="mainProducts"></main>
 
-    <footer class="footerAbs">
+    <footer>
       <div id="footer-container">
         <div id="socials">
           <a href="#" class="socialLinks fa fa-facebook"></a>
@@ -49,6 +44,6 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="/src/ts/main.ts"></script>
+    <script type="module" src="/src/ts/mainProductPage.ts"></script>
   </body>
 </html>

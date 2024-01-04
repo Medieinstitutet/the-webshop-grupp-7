@@ -1,97 +1,130 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@use "variables" as v;
+@use "mixins" as mx;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+@font-face {
+  font-family: "funky";
+  src: url(/src/fonts/super-funky-font/SuperFunky-lgmWw.ttf);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: v.$primary-font;
+
+  a {
+    text-decoration: none;
+
+    &:visited {
+      color: black;
+    }
+
+    &:hover {
+      color: #f77c2c;
+    }
+  }
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  @include mx.flex(column, center, center, 100%);
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+  #header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: v.$header-footer; */
+    @include mx.flex(row, space-between, center, 100vw);
+    height: 7vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+    h1 {
+      font-size: 22px;
+      font-family: "funky";
+    }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
-}
+    #categories {
+      margin-left: 3%;
+      font-size: 1.5rem;
+      color: black;
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+      .choices {
+        position: relative;
+        color: black;
+        transition: text-decoration 0.3s ease-in-out;
+        margin: 10px;
+        &:hover {
+          text-decoration: underline;
+          color: #f77c2c;
+        }
+      }
+    }
+    #cartElement {
+      margin-right: 3%;
+      #cartAmount {
+        font-weight: 800;
+      }
+      #cartIconHolder {
+        #cartIcon {
+          width: 2rem;
+        }
+      }
+    }
   }
-  a:hover {
-    color: #747bff;
+
+  main {
+    width: 100%;
+    min-height: 86vh;
+    #hero-image {
+      height: 100vh;
+      background-image: url(../img/bgpic.jpeg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      #hero-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #f77c2c;
+        font-size: 20px;
+
+        h3 {
+          &:hover {
+            color: #f77c2c;
+          }
+        }
+      }
+    }
   }
-  button {
-    background-color: #f9f9f9;
+
+  footer {
+    height: 7vh;
+    position: relative;
+    bottom: 0;
+    padding-right: 40px;
+    /* background-color: v.$header-footer; */
+    @include mx.flex(row, flex-end, center, 100%);
+
+    #socials {
+      padding-right: -20px;
+      .fa {
+        font-size: 28px;
+        color: black;
+        padding: 10px;
+
+        &:hover {
+          color: #f77c2c;
+        }
+      }
+    }
+  }
+  .footerAbs {
+    position: absolute;
+    bottom: 0;
   }
 }
