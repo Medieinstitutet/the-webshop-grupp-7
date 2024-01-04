@@ -24,7 +24,7 @@
             <a class="choices" href="productPage.html?category=electronics">Electronics</a>
           </div>
         </div>
-        <a href="/index.html">The Web Shop</a>
+        <a href="/index.html"><h1>The Web Shop</h1></a>
         <div id="cartElement">
           <span id="cartAmount"></span>
           <a id="cartIconHolder" href="/checkout.html">
@@ -35,14 +35,17 @@
     </header>
 
     <main id="mainPay">
-      <a href="/checkout.html"> &larr;Tillbaka till shoppingbagen </a>
+      <a id="back" href="/checkout.html"> &larr;Tillbaka till shoppingbagen </a>
       <section id="checkout-container">
         <h2>Slutför Köp</h2>
+        
 
         <div id="payment-display"></div>
-        <aside id="total-price">
+        <div id="products-display" class="smaller">
+        </div>
+        <div id="total-price">
           <button id="payment-btn">Slutför köp</button>
-        </aside>
+        </div>
       </section>
     </main>
 

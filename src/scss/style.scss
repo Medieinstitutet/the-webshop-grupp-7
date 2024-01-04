@@ -1,6 +1,11 @@
 @use "variables" as v;
 @use "mixins" as mx;
 
+@font-face {
+  font-family: "funky";
+  src: url(/src/fonts/super-funky-font/SuperFunky-lgmWw.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +14,12 @@
 
   a {
     text-decoration: none;
+
+    
+
+    &:visited {
+      color: black
+    }
 
     &:hover {
       color: #f77c2c;
@@ -31,6 +42,11 @@ body {
     padding: 0;
     box-sizing: border-box;
     max-width: 100%;
+    
+    h1 {
+      font-size: 22px;
+      font-family: "funky";
+    }
 
     #categories {
       margin-left: 3%;
@@ -44,6 +60,7 @@ body {
         margin: 10px;
         &:hover {
           text-decoration: underline;
+          color: #f77c2c;
         }
       }
     }
@@ -75,6 +92,14 @@ body {
         transform: translate(-50%, -50%);
         color: #f77c2c;
         font-size: 20px;
+
+        h3{
+          &:hover {
+          color: #f77c2c;
+        }
+        }
+
+        
       }
     }
   }
@@ -93,6 +118,10 @@ body {
         font-size: 28px;
         color: black;
         padding: 10px;
+
+        &:hover{
+         color: #f77c2c;
+        }
       }
     }
   }

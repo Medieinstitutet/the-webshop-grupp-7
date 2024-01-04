@@ -5,7 +5,13 @@ body {
   main {
     top: 10vh;
     height: 80%;
-    margin: 50px 0;
+    margin: 70px 0;
+
+    #back {
+      margin: 40px;
+      top: 15vh;
+
+    }
 
     #checkout-container {
       top: 10vh;
@@ -23,7 +29,7 @@ body {
       #products-display,
       #payment-display {
         float: left;
-        @include mx.flex(column, space-evenly, flex-start, 65%);
+        @include mx.flex(column, space-evenly, center, 65%);
         background-color: #f2e9df;
         margin: 1rem;
         padding: 2rem;
@@ -59,6 +65,7 @@ body {
         float: right;
         width: 25%;
         background-color: #f2e9df;
+        border-radius: 8px;
 
         #total-sum {
           @include mx.flex(row, space-between, flex-start, 100%);

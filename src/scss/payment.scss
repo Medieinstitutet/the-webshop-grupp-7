@@ -19,6 +19,33 @@
   flex-direction: column;
 }
 
+
+.product {
+  margin: 2rem;
+  padding: 2.5rem;
+  @include mx.flex(row, space-between, center, 80%);
+  gap: 2rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  font-size: 10px;
+
+  .fa-trash {
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .imageContainer {
+    width: 30px;
+    height: auto;
+
+    img {
+      width: 50%;
+      height: auto;
+    }
+  }
+}
+
+
 /* #header-container,
 footer {
   background-color: v.$header-footer;
