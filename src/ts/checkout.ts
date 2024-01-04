@@ -1,14 +1,9 @@
 import { ICartProduct } from "./models/IProduct";
-import { Product } from "./models/Product";
 
-/* localStorage.clear(); */
 const productsDisplay = document.getElementById(
   "products-display"
 ) as HTMLDivElement;
-/* 
-let shoppingCart: ICartProduct[] = JSON.parse(
-  localStorage.getItem("shoppingCart") || JSON.stringify([])
-); */
+
 window.addEventListener("load", createShoppingBag);
 
 export function createShoppingBag() {
@@ -47,8 +42,10 @@ export function createShoppingBag() {
       img.alt = "Picture of " + shoppingCart[i].title;
 
       let x = shoppingCart[i].price;
-      let y: number = +x;
-      partSum = partSum + y;
+      let z = shoppingCart[i].amount;
+      let c = x * z;
+
+      partSum = partSum + c;
 
       productsDisplay.appendChild(product);
 
@@ -60,12 +57,9 @@ export function createShoppingBag() {
       product.appendChild(trashCan);
 
       trashCan.addEventListener("click", () => {
-        /* removeItem(shoppingCart[i]); */
         shoppingCart.splice(i, 1);
         localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
         createShoppingBag();
-        console.log(shoppingCart);
-        /* localStorage.removeItem("shoppingCart", shoppingCart[i]); */
       });
 
       itemAmount.addEventListener("change", (e) => {
@@ -80,20 +74,9 @@ export function createShoppingBag() {
         });
         localStorage.setItem("shoppingCart", JSON.stringify(updatedCart));
         createShoppingBag();
-        console.log(shoppingCart);
       });
     }
     let sum = document.getElementById("sum") as HTMLParagraphElement;
-    sum.innerHTML = "$" + partSum;
+    sum.innerHTML = "$" + partSum.toFixed(2);
   }
 }
-
-/* function removeItem(item: Product) {
-  let rm = item.id;
-  for(let i  = 0; i < localStorage.length; i++){
-    if(localStorage[i].includes(rm)){
-        let valueToRemove = localStorage[i];
-        localStorage.removeItem(valueToRemove);
-    }
-  }
-} */
