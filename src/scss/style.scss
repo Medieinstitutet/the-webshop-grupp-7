@@ -63,6 +63,9 @@ body {
     }
     #cartElement {
       margin-right: 3%;
+      #cartAmount {
+        font-weight: 800;
+      }
       #cartIconHolder {
         #cartIcon {
           width: 2rem;

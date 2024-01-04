@@ -34,6 +34,11 @@ paymentButton?.addEventListener("click", () => {
       let title = document.createElement("h1");
       title.innerHTML = "Ditt köp har genomförts!";
       mainPay.appendChild(title);
+
+      if(document.getElementById("cartAmount")){
+        let cart = document.getElementById("cartAmount") as HTMLElement;;
+        cart.innerHTML = "0";
+      }
     }
   }
 });

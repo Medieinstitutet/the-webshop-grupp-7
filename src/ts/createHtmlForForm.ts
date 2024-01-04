@@ -50,4 +50,8 @@ export function createHtmlForForm(){
     labelCity.innerHTML = "City: ";
     form.appendChild(labelCity);
     form.appendChild(city);
+
+    form.addEventListener("submit", (e:SubmitEvent) => {
+        e.preventDefault;
+    })
 }
