@@ -1,11 +1,7 @@
+import { generateCartAmount } from "./generateCartAmount";
 import { ICartProduct } from "./models/IProduct";
 import { Product } from "./models/Product";
 
-const generateCartAmount = (shoppingCart: ICartProduct[]) => {
-  let cartAmountNumber = shoppingCart.length.toString();
-  let cartAmount = document.getElementById("cartAmount");
-  (cartAmount as HTMLElement).innerHTML = cartAmountNumber;
-};
 export function createHtmlForProducts(products: Product[]) {
   if (document.getElementById("mainProducts")) {
     let mainProducts = document.getElementById(
@@ -46,11 +42,11 @@ export function createHtmlForProducts(products: Product[]) {
       productContainer.appendChild(cartButton);
       productContainer.appendChild(description);
 
-      productContainer.addEventListener("click", (e:Event) => {
-        if(e.target !== cartButton){
-        productContainer.classList.toggle("product--container__highlighted");
+      productContainer.addEventListener("click", (e: Event) => {
+        if (e.target !== cartButton) {
+          productContainer.classList.toggle("product--container__highlighted");
         }
-      })
+      });
 
       cartButton.addEventListener("click", () => {
         const existingProduct = shoppingCart.find(

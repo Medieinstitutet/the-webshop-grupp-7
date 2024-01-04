@@ -1,4 +1,11 @@
+import { generateCartAmount } from "./generateCartAmount";
 import { ICartProduct } from "./models/IProduct";
+
+let shoppingCart: ICartProduct[] = JSON.parse(
+  localStorage.getItem("shoppingCart") || JSON.stringify([])
+);
+
+generateCartAmount(shoppingCart);
 
 const productsDisplay = document.getElementById(
   "products-display"
