@@ -1,113 +1,99 @@
 @use "variables" as v;
 @use "mixins" as mx;
 
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 100vh;
-  background-color: #f7e0e8;
+  font-family: v.$primary-font;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: #f77c2c;
+    }
+  }
+}
+
+body {
+  @include mx.flex(column, center, center, 100%);
+  gap: 1rem; 
+
+  #header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: v.$header-footer; */
+    @include mx.flex(row, space-between, center, 100vw);
+    height: 10vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+
+    #categories {
+      margin-left: 3%;
+      font-size: 1.5rem;
+      color: black;
+
+      .choices {
+        position: relative;
+        color: black;
+        transition: text-decoration 0.3s ease-in-out;
+        margin: 10px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    #cartElement {
+      margin-right: 3%;
+      #cartIconHolder {
+        #cartIcon {
+          width: 2rem;
+        }
+      }
+    }
+  }
+
   main {
-    .hero-image {
+    width: 100%;
+
+    #hero-image {
+      height: 100vh;
       background-image: url(../img/bgpic.jpeg);
       background-size: cover;
       background-position: center;
-      background-repeat: repeat;
-      position: relative;
+      background-repeat: no-repeat;
 
-      .hero-text {
+      #hero-text {
         text-align: center;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         color: #f77c2c;
-        font-family: "super-funky";
-        font-size: 24px;
+        font-size: 20px;
       }
     }
   }
-}
 
-footer {
-  position: fixed;
-  bottom: 0;
-  height: 120px;
-  background-color: #f2e9df;
-  @include mx.flex(row, flex-end, center, 100%);
+  footer {
+    position: fixed;
+    bottom: 0;
+    height: 10vh;
+    padding-right: 40px;
+    /* background-color: v.$header-footer; */
+    @include mx.flex(row, flex-end, center, 100%);
 
-  #footer-container {
-    @include mx.flex(row, space-around, center, 100%);
-    color: #edb480;
-  }
-
-  #socials {
-    padding-right: -20px;
-    .fa {
-      font-size: 28px;
-      color: #edb480;
-      padding: 10px;
-    }
-  }
-}
-
-a {
-  text-decoration: none;
-
-  &:hover {
-    color: #f77c2c;
-  }
-  /* &:visited{
-      color: #edb480;
-  } */
-}
-
-#header-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #f2e9df;
-  @include mx.flex(row, space-between, center, 100vw);
-  min-height: 10vh;
-  gap: 10%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  max-width: 100%;
-  font-family: v.$primary-font;
-  #categories {
-    margin-left: 3%;
-    font-size: 1.5rem;
-    color: black;
-
-    a {
-      position: relative;
-      color: black;
-      transition: text-decoration 0.3s ease-in-out;
-      &:hover {
-        text-decoration: underline;
+    #socials {
+      padding-right: -20px;
+      .fa {
+        font-size: 28px;
+        color: black;
+        padding: 10px;
       }
     }
-  }
-  #cartElement {
-    margin-right: 3%;
-    #cartIconHolder {
-      #cartIcon {
-        width: 2rem;
-      }
-    }
-  }
-}
-@font-face {
-  font-family: "super-funky";
-  src: url(../fonts/super-funky-font/SuperFunky-lgmWw.ttf);
-}
-
-body {
-  @include mx.flex(column, center, center, 100%);
-  gap: 1rem;
-
-  main {
-    width: 100%;
   }
 }
